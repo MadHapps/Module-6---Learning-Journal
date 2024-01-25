@@ -1,0 +1,19 @@
+{
+    "name": "My learning journal",
+    "short_name": "Journal",
+    "icons": [
+        {
+            "src": "./images/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/favicon/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#282828",
+    "background_color": "whitesmoke",
+    "display": "standalone"
+}
