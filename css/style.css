@@ -179,7 +179,7 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: .75em;
     justify-content: center;
-    margin: 0 calc(8vw - 1.6em);
+    /* margin: 0 calc(8vw - 1.6em); */
     padding: 2em .5em 0;
     background-color: whitesmoke;
 }
@@ -287,6 +287,8 @@ footer p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-width: 1000px;
+    justify-self: center;
     /* margin-inline: calc(20vw - 4em); */
 }
 

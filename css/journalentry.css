@@ -9,7 +9,7 @@ body {
 }
 
 body>*:not(footer) {
-    padding: 0 calc(15vw - 3em);
+    padding: 0 calc(4vw - .8em);
 }
 
 h2 {
