@@ -13,7 +13,7 @@ body {
 header,
 main,
 section {
-    padding: 1em;
+    padding: 0 calc(4vw - .8em);
 }
 
 .about-me--summary,
