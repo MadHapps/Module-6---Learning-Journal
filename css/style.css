@@ -30,7 +30,7 @@ body,
 }
 
 body {
-    grid-template-rows: 4rem 500px auto 1fr;
+    grid-template-rows: auto clamp(550px, 33.333vw, 1100px) auto 1fr;
     grid-template-areas:
         "nav"
         "header"
@@ -39,6 +39,18 @@ body {
     width: 100%;
     height: 100vh;
     background-color: whitesmoke;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    line-height: 1.35em;
 }
 
 /* GRID AREAS */
@@ -50,7 +62,7 @@ body {
     grid-area: header
 }
 
-.journal-card-display {
+.front-page-card-display {
     grid-area: content
 }
 
@@ -71,12 +83,14 @@ footer {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 4rem;
+    height: 4.5rem;
     justify-content: space-between;
-    padding: 0 clamp(.5em, 2vw, 1em);
-    background-color: #222222;
+    padding: 0 clamp(.5em, 8vw, 5em);
+    /* background-color: #222222; */
+    background-image: linear-gradient(#181818, #202020d0, #22222270, transparent);
     text-wrap: nowrap;
-    z-index: 0;
+    z-index: 1;
+    /* border-radius: 0 0 10vw 10vw */
 }
 
 .navbar_title {
@@ -92,7 +106,7 @@ footer {
 
 .navbar_buttons {
     justify-content: space-between;
-    gap: clamp(0px, 1vw, 1em);
+    gap: clamp(.5em, 1vw, 1.5em);
 }
 
 .navbar p {
@@ -120,7 +134,11 @@ footer {
     width: 100%;
     justify-content: stretch;
     background-color: #222222;
-    z-index: -1;
+    cursor: pointer;
+}
+
+.featured-post-link {
+    color: whitesmoke
 }
 
 .featured-post_details {
@@ -146,7 +164,8 @@ footer {
     height: 100%;
 }
 
-.featured-post_image {
+.featured-post_image,
+.featured-post_image-wrapper a {
     position: absolute;
     display: block;
     width: inherit;
@@ -156,11 +175,11 @@ footer {
 
 /* JOURNAL CARDS */
 
-.journal-card-display {
+.front-page-card-display {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: .75em;
     justify-content: center;
-    margin: 0 calc(15vw - 3em);
+    margin: 0 calc(8vw - 1.6em);
     padding: 2em .5em 0;
     background-color: whitesmoke;
 }
@@ -175,10 +194,12 @@ footer {
     box-shadow: 0 0 1px #444444;
 }
 
+.journal-card a,
 .journal-card img {
     grid-row: 1;
     grid-column: 1;
     width: 100%;
+    text-decoration: none;
 }
 
 .journal-card_details {
@@ -188,14 +209,15 @@ footer {
     display: flex;
     flex-direction: column;
     gap: .5em;
-    background-image: linear-gradient(transparent, #282828);
+    /* background-image: linear-gradient(transparent, #282828); */
     padding: .75em 1em;
 }
 
 .journal-card_details p,
 .journal-card_details h2 {
     margin: 0;
-    text-shadow: 0 0 2px #282828;
+    color: #222222;
+    /* text-shadow: 0 0 2px #282828; */
 }
 
 /* FOOTER */
@@ -227,34 +249,58 @@ footer p {
     }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 400px) {
     .navbar_title p {
         display: none;
     }
 }
 
 @media (min-width: 500px) {
-    .navbar {
-        padding: 0 clamp(.5em, 4vw, 4em);
-    }
 
     .header-card_details {
         padding: 2em clamp(.5em, 4vw, 5em);
     }
 
-    .journal-card-display {
+    .front-page-card-display {
         grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
     }
+
 }
 
-@media (min-width: 1100px) {
-    .journal-card-display {
+@media (min-width: 1250px) {
+    .front-page-card-display {
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
 }
 
 @media (min-width: 2950px) {
-    .journal-card-display {
+    .front-page-card-display {
         grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     }
 }
+
+/* RECENT POSTS */
+
+.recent-posts-wrapper {
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-inline: calc(20vw - 4em);
+}
+
+.recent-posts-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: .75em;
+    width: 100%;
+    justify-content: center;
+    color: whitesmoke;
+    background-color: whitesmoke;
+}
+
+/* .recent-post>* {
+    color: whitesmoke !important;
+    text-shadow: 0 0 2px #282828;
+} */

@@ -1,5 +1,5 @@
 body {
-    grid-template-rows: 4rem auto auto 1fr 1fr;
+    grid-template-rows: 4.5rem auto auto 1fr 1fr;
     grid-template-areas:
         "nav nav nav"
         "header header header"
@@ -16,22 +16,10 @@ section {
     padding: 1em;
 }
 
-h1,
-h2,
-h3,
-p {
-    margin: 0;
-    padding: 0;
-}
-
-p {
-    line-height: 1.35em;
-}
-
 .about-me--summary,
 .about-me--content {
     margin: 0 auto;
-    max-width: 86ch;
+    max-width: 100ch;
 }
 
 /* GRID AREAS */
@@ -47,12 +35,12 @@ p {
     grid-area: content
 }
 
-.recent-posts {
+.recent-posts-wrapper {
     grid-area: recent
 }
 
 footer {
-    grid-area: footer
+    grid-area: footer;
 }
 
 /* HEADER */
@@ -93,23 +81,8 @@ footer {
     gap: .5em;
 }
 
-/* RECENT POSTS */
-
-.recent-posts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.recent-posts--display {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: .75em;
-    justify-content: center;
-    margin: 1em calc(15vw - 3em) 0;
-    color: whitesmoke;
-    background-color: whitesmoke;
+.about-me--content h2:not(:first-child) {
+    margin-top: 1.25em;
 }
 
 /* MEDIA QUERIES */

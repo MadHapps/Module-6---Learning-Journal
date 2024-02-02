@@ -1,0 +1,100 @@
+body {
+    grid-template-rows: 4.5rem auto auto 1fr;
+    grid-template-areas:
+        "nav nav nav"
+        "content content content"
+        "recent recent recent"
+        "footer footer footer";
+    color: #282828;
+}
+
+body>*:not(footer) {
+    padding: 0 calc(15vw - 3em);
+}
+
+h2 {
+    margin-top: 1em;
+}
+
+p {
+    margin-top: .5em;
+}
+
+/* GRID AREAS */
+
+.navbar {
+    grid-area: nav
+}
+
+main {
+    grid-area: content
+}
+
+.recent-posts-wrapper {
+    grid-area: recent
+}
+
+footer {
+    grid-area: footer;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    background-image: none;
+    background-color: #222222;
+    border-radius: 0 0 10vw 10vw;
+}
+
+/* JOURNAL ENTRY */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* main>*,
+section>*:not(h2),
+.recent-posts-wrapper {
+    margin: 0 calc(15vw - 3em);
+} */
+
+.featured-post_image-wrapper {
+    margin-top: 2em;
+    display: grid;
+    justify-items: center;
+    height: clamp(250px, 25vw, 550px);
+    z-index: -1;
+}
+
+.featured-post_image {
+    min-width: 250px;
+    max-width: inherit;
+    border-radius: 2vw;
+
+}
+
+.journal-entry-focus {
+    color: #222222;
+    /* align-self: start; */
+    max-width: 120ch;
+    margin-top: 1em;
+}
+
+.wat {
+    color: #222222;
+    max-width: 120ch;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 400px) {
+    .featured-post_image {
+        max-width: 99vw;
+    }
+}
