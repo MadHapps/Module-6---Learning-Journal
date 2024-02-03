@@ -220,6 +220,29 @@ footer {
     /* text-shadow: 0 0 2px #282828; */
 }
 
+/* RECENT POSTS */
+
+.recent-posts-wrapper {
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    justify-self: center;
+    /* margin-inline: calc(20vw - 4em); */
+}
+
+.recent-posts-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: .75em;
+    width: 100%;
+    justify-content: center;
+    color: whitesmoke;
+    background-color: whitesmoke;
+}
+
 /* FOOTER */
 
 footer {
@@ -278,31 +301,3 @@ footer p {
         grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     }
 }
-
-/* RECENT POSTS */
-
-.recent-posts-wrapper {
-    display: flex;
-    gap: 1em;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 1000px;
-    justify-self: center;
-    /* margin-inline: calc(20vw - 4em); */
-}
-
-.recent-posts-display {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: .75em;
-    width: 100%;
-    justify-content: center;
-    color: whitesmoke;
-    background-color: whitesmoke;
-}
-
-/* .recent-post>* {
-    color: whitesmoke !important;
-    text-shadow: 0 0 2px #282828;
-} */

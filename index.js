@@ -1,5 +1,4 @@
 import { journalEntries } from "./data-journal-entries.js"
-import { v4 as uuidv4 } from 'https://jspm.dev/uuid'
 
 const featuredPostEl = document.getElementById('featured-post')
 const frontPageCardDisplayEl = document.getElementById('front-page-card-display')
@@ -7,22 +6,12 @@ const recentPostsDisplayEl = document.getElementById('recent-posts-display')
 const journalEntryPage = document.getElementById('journal-entry-page')
 
 let numberOfViewMore = 3
-
-
 addEventListener('click', (e) => {
-    console.log(e.target.dataset.journalEntryId)
-    if (e.target.id === 'home-btn') {
-        console.log('home was clicked!')
-    }
-    else if (e.target.id === 'pg-about-me') {
-        console.log('about me was clicked!')
-    }
-    else if (e.target.id === 'recent-posts-view-btn') {
+    if (e.target.id === 'recent-posts-view-btn') {
         numberOfViewMore += 2
         renderJournalCardsInside(recentPostsDisplayEl, numberOfViewMore)
     }
     else if (e.target.dataset.journalEntryId) {
-        console.log('journl card clicked!')
         localStorage.setItem("journalSelectionId", e.target.dataset.journalEntryId)
     }
 })
@@ -61,7 +50,6 @@ function renderJournalCardsInside(displayElement, numberOfCards) {
     } else if (displayElement === journalEntryPage) {
         const journalEntry = journalEntries[localStorage.getItem('journalSelectionId')]
 
-        console.log(journalEntry)
         html += `
         <div class="journal-entry-focus">
             <p>${journalEntry.date}</p>
@@ -117,5 +105,4 @@ if (frontPageCardDisplayEl) {
 
 if (journalEntryPage) {
     renderJournalCardsInside(journalEntryPage)
-    console.log('wat')
 }
